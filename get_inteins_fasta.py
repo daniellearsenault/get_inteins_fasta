@@ -25,14 +25,14 @@ if __name__ == '__main__':
             int_name_indexes.append((i + 15))
     #following print statements for testing
     #print("these are indexes for I of every InteinName:", int_name_indexes)
-    print("InteinName count:", len(int_name_indexes))
+    #print("InteinName count:", len(int_name_indexes))
     seq_indexes = []
     for i in range(len(inteins_str)):
         if (inteins_str[i] == 'S') and (inteins_str[i + 2] == 'q') and (inteins_str[i + 8] == ':'):
             seq_indexes.append((i + 13))
     #following print statements for testing
     #print("these are indexes for S of every Sequence:", seq_indexes)
-    print("Sequence count:", len(seq_indexes))
+    #print("Sequence count:", len(seq_indexes))
 
     #following creates output in format of
     #>inteinname newline
