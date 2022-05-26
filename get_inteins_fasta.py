@@ -19,20 +19,20 @@ if __name__ == '__main__':
     #now have all of InBase 2.0 int list as conc. .txt file
     #1273 entries as of 12/28/2020
 
-    int_name_indexes = []
+    int_name_indices = []
     for i in range(len(inteins_str)):
         if (inteins_str[i] == 'I') and (inteins_str[i + 6] == 'N') and (inteins_str[i + 10] == ':'):
-            int_name_indexes.append((i + 15))
+            int_name_indices.append((i + 15))
     #following print statements for testing
-    #print("these are indexes for I of every InteinName:", int_name_indexes)
-    #print("InteinName count:", len(int_name_indexes))
-    seq_indexes = []
+    #print("these are indices for I of every InteinName:", int_name_indices)
+    #print("InteinName count:", len(int_name_indices))
+    seq_indices = []
     for i in range(len(inteins_str)):
         if (inteins_str[i] == 'S') and (inteins_str[i + 2] == 'q') and (inteins_str[i + 8] == ':'):
-            seq_indexes.append((i + 13))
+            seq_indices.append((i + 13))
     #following print statements for testing
-    #print("these are indexes for S of every Sequence:", seq_indexes)
-    #print("Sequence count:", len(seq_indexes))
+    #print("these are indices for S of every Sequence:", seq_indices)
+    #print("Sequence count:", len(seq_indices))
 
     #following creates output in format of
     #>inteinname newline
@@ -40,16 +40,16 @@ if __name__ == '__main__':
     #>inteinname [...]
 
     name_seq_pairs = []
-    for n in range(len(int_name_indexes)):
+    for n in range(len(int_name_indices)):
         this_int_name = ''
         i = 0
-        while inteins_str[int_name_indexes[n] + i] != '<':
-            this_int_name += inteins_str[int_name_indexes[n] + i]
+        while inteins_str[int_name_indices[n] + i] != '<':
+            this_int_name += inteins_str[int_name_indices[n] + i]
             i += 1
         this_seq = ''
         i = 0
-        while inteins_str[seq_indexes[n] + i] != '<':
-            this_seq += inteins_str[seq_indexes[n] + i]
+        while inteins_str[seq_indices[n] + i] != '<':
+            this_seq += inteins_str[seq_indices[n] + i]
             i += 1
         name_seq_pairs.append([this_int_name, this_seq])
 
